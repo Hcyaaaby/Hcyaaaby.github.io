@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Deeper camp</title>
+    <link rel="stylesheet" href="type.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css"> 
+    <script src="type.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8adb995290.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .main-nav {
+            background-color: rgb(36, 117, 111);
+        }
+        .main-nav a {
+            color: rgb(255, 255, 255);
+            display: block;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+        .main-nav > ul {
+            display: flex;
+            justify-content: center;
+        }
+        .main-nav > ul > li {
+            position: relative;
+        }
+        .main-nav > ul > li > a {
+            padding: 10px 30px;
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgb(149, 201, 196);
+            /* display: flex; */
+            z-index: 2;
+        }
+        .menu-item:hover .sub-menu,.sub-menu-item:hover > ul {
+            display: block;
+        }
+        .menu-item:hover .sub-menu {
+            display: block;
+        }
+        .sub-menu-item {
+            position: relative; /* 將位置設為相對定位 */ /* 調整層級，使其位於其他元素之上 */
+        }
+        .sub-menu-item > a {
+            color: rgb(19, 86, 80);
+        }
+        .sub-menu ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: rgb(149, 201, 196);
+            z-index: 2;
+        }
+
+        .sub-menu ul li {
+            position: relative;
+        }
+        .sub-menu ul li:hover > ul {
+            display: block
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-logo nav-section">
+            <a href="#">
+                <img src="茛粗ㄉ.png" class="logo--img" alt="">
+            </a>
+        </div>
+        </label>
+        <div class="nav-computer">
+            <div class="nav-link nav-section">
+                <a href="#">About</a>
+                <a href="#">Work</a>
+            </div>
+            <div class="nav-social nav-section">
+                <a href="#">
+                   <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#">
+                   <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="#">
+                   <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <div class="nav-contact nav-section">
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <button class="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <nav class="main-nav">
+        <ul>
+            <li class="menu-item">
+                <a href="">Camping Area</a>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item">
+                        <a href="">North Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Taipei</a>
+                            </li>
+                            <li>
+                                <a href="">Singbei</a>
+                            </li>
+                            <li>
+                                <a href="">Keelung</a>
+                            </li>
+                            <li>
+                                <a href="">Taoyuan</a>
+                            </li>
+                            <li>
+                                <a href="">Hsinchu</a>
+                            </li>
+                            <li>
+                                <a href="">Yilan</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">Central Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Miaoli</a>
+                            </li>
+                            <li>
+                                <a href="">Taichung</a>
+                            </li>
+                            <li>
+                                <a href="">Changhua</a>
+                            </li>
+                            <li>
+                                <a href="">Nantou</a>
+                            </li>
+                            <li>
+                                <a href="">Yunlin</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">South Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Chiayi</a>
+                            </li>
+                            <li>
+                                <a href="">Tainan</a>
+                            </li>
+                            <li>
+                                <a href="">Kaohsiung</a>
+                            </li>
+                            <li>
+                                <a href="">Pingtung</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">Eastern Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Hualien</a>
+                            </li>
+                            <li>
+                                <a href="">Taitung</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="">Glamping Area</a>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item">
+                        <a href="">North Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Singbei</a>
+                            </li>
+                            <li>
+                                <a href="">Keelung</a>
+                            </li>
+                            <li>
+                                <a href="">Taoyuan</a>
+                            </li>
+                            <li>
+                                <a href="">Yilan</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">Central Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Miaoli</a>
+                            </li>
+                            <li>
+                                <a href="">Nantou</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">South Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Chiayi</a>
+                            </li>
+                            <li>
+                                <a href="">Pingtung</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">Eastern Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Hualien</a>
+                            </li>
+                            <li>
+                                <a href="">Taitung</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="">Camper Van Area</a>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item">
+                        <a href="">North Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Singbei</a>
+                            </li>
+                            <li>
+                                <a href="">Yilan</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">Central Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Miaoli</a>
+                            </li>
+                            <li>
+                                <a href="">Nantou</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">South Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Pingtung</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a href="">Eastern Region</a>
+                        <ul>
+                            <li>
+                                <a href="">Hualien</a>
+                            </li>
+                            <li>
+                                <a href="">Taitung</a>
+                            </li>
+                        </ul>
+                  </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <img src="20.png" class="hero-bg" alt="">
+        <img src="20-1.png" class="bg-png" alt="">
+        <h1 class="hero-title">Friendly Nature</h1>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="photo1">
+                <img src="p1.jpg" class="content--img" alt="">
+            </div>
+            <div class="text1">
+                <h2>HI! Here is Deeeeeeper Camp</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores est obcaecati quos harum dignissimos assumenda accusantium, maxime fuga, officia, totam deserunt. Praesentium at asperiores repellat! Ad iure veniam ab nemo.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text2">
+                <h3>Get Close to Nature With Us! </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur provident quaerat explicabo officiis eveniet quidem mollitia autem. Consequuntur provident nam quaerat commodi est temporibus voluptates! Non nam iure praesentium! Accusamus!</p>
+            </div>
+            <div class="photo2">
+                <img src="p2.jpg" class="content--img" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="sitemap"></div>
+    </div>
+    <section class="camp">
+        <div class="camp_bg bg1">
+            <h1 class="title">Camping</h1>
+        </div>
+        <div class="camp_bg bg2">
+            <h1 class="title">Glamping</h1>
+        </div>
+        <div class="camp_bg bg3">
+            <h1 class="title">Camper Van</h1>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="type.js"></script>
+
+</body>
+</html>

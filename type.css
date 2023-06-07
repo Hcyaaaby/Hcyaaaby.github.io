@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+}
+
+/* 在小型螢幕上點擊主選單後顯示子選單 */
+@media screen and (max-width: 768px) {
+  .menu-item:hover .sub-menu {
+      display: block;
+  }
+}
+
+/* 在大型螢幕上懸浮顯示子選單 */
+@media screen and (min-width: 769px) {
+  .menu-item:hover .sub-menu {
+      display: flex;
+  }
+}
+
+/* 最上面選單的部分開始 */
+.logo--img {
+    width: 250px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-computer {
+    display: flex;
+    flex-basis: calc(100% * (1 / 2));
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-logo {
+    flex-basis: calc(100% * (1 /2));
+}
+
+.nav-section {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.nav-section:not(.nav-logo) {
+    border-left: 1px solid var(--border-color);
+}
+
+.nav-social , .nav-contact , .nav-link {
+    flex: 1;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+.nav-link , .nav-social {
+    gap: 20%;
+}
+
+.nav-contact {
+    text-align: center;
+    transition: 0.4s ease-in-out;
+}
+
+.nav-contact:hover {
+    background: var(--primary-color);
+}
+
+.nav-section > a {
+    transition: 0.3s ease-in-out;
+}
+
+.nav-section:not(.nav-contact) > a:hover {
+    color: var(--primary-color);
+}
+
+.nav-social > i:hover {
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none;
+    all: unset;
+    margin-left: auto;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.nav-toggle:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width : 800px) {
+  .nav-computer {
+      display: flex;
+      flex-direction:column;
+  }
+  .nav-toggle {
+      display: block;
+  }
+}
+
+@media (max-width: 767px) {
+    /* 小於768px的螢幕上 */
+    .nav-computer {
+      display: none;
+    }
+    .nav-toggle {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    /* 768px或更大的螢幕上 */
+    .nav-computer {
+      display: flex;
+    }
+    .nav-toggle {
+      display: none;
+    }
+  }
+
+  /* 滾動視差1 */
+  .hero {
+    position: relative;
+    height: 120vh;
+    display: grid;
+    overflow-y: hidden;
+  }
+
+  .hero-title {
+    margin-inline: auto;
+    margin-top: 30vh;
+    z-index: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ffffff;
+    font-size: 100px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    height: 120vh;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .bg-png {
+    position: absolute;
+    height: 120vh;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .bg-png {
+    z-index: 1;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-title {
+      font-size: 60px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-title {
+      font-size: 40px;
+    }
+  }
+
+  /* 滾動視差2 */
+  .camp_bg {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.title {
+    color: #fff;
+    font-size: 9rem;
+    mix-blend-mode: difference;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.bg1 {
+    background-image: url(01.jpg);
+}
+
+.bg2 {
+    background-image: url(03.jpg);
+}
+
+.bg3 {
+    background-image: url(02.jpg);
+}
+
+@media screen and (max-width: 767px) {
+    /* 手機 */
+    .title {
+      font-size: 4rem;
+    }
+  }
+  
+@media screen and (min-width: 768px) {
+    /* 電腦 */
+    .title {
+      font-size: 9rem;
+    }
+    }    
