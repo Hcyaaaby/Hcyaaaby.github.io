@@ -555,8 +555,8 @@ body {
 }
 
 .item:hover .txt::before {
-  border-left: 184px solid #feb85d;
-  border-right: 184px solid #feb85d;
+  border-left: 185px solid #feb85d;
+  border-right: 185px solid #feb85d;
 }
 
 .item:hover h2 {
