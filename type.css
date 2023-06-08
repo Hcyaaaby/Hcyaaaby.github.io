@@ -9,7 +9,82 @@ body {
       display: block;
   }
 }
-
+@media screen and (max-width: 360px) {
+  .menu-item:hover .sub-menu {
+      display: block;
+  }
+  .main-nav {
+    background-color: rgb(36, 117, 111);
+    padding: 3px 8px;
+    position: relative;
+  }
+  .main-nav a {
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 3px 8px;
+    text-decoration: none;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
+    font-size: 12px;
+  }
+  .main-nav > ul {
+    display: flex;
+    justify-content: center;
+  }
+  .main-nav > ul > li {
+    position: relative;
+  }
+  .main-nav > ul > li > a {
+    padding: 10px 30px;
+  }
+  .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: rgb(36, 117, 111);
+    /* display: flex; */
+    z-index: 2;
+  }
+  .sub-menu ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(36, 117, 111);
+    z-index: 2;
+  }
+  .menu-item:hover .sub-menu,.sub-menu-item:hover > ul {
+    display: block;
+  }
+  .menu-item:hover .sub-menu {
+    display: block;
+    width: 100%; /* 新增這行以填滿父選單的寬度 */
+    position: absolute;
+    top: 100%; /* 將子選單置於選單列的正下方 */
+    left: 0;
+  }
+  .sub-menu-item {
+    position: relative; /* 將位置設為相對定位 */ /* 調整層級，使其位於其他元素之上 */
+  }
+  .sub-menu-item > a {
+    color: rgb(87, 184, 178);
+  }
+  .sub-menu ul li {
+    position: relative;
+  }
+  .sub-menu ul li:hover > ul {
+    display: block
+  }
+  .sub-menu-item:hover > a {
+    color: white;
+  }
+  .menu-item .camper-van > ul {
+    left: -100%; /* 將選單置於父選單的左側 */
+    top: 0;
+    width: 100vw;
+  }
+}
 /* 在大型螢幕上懸浮顯示子選單 */
 @media screen and (min-width: 769px) {
   .menu-item:hover .sub-menu {
@@ -147,6 +222,19 @@ body {
   }
 }
 
+@media (max-width: 360px) {
+    /* 小於768px的螢幕上 */
+    .nav-computer {
+      display: none;
+    }
+    .nav-toggle {
+      display: block;
+    }
+    .logo--img {
+      width: 185px;
+  }
+}
+
 /* 滾動視差1 */
 .hero {
   position: relative;
@@ -188,16 +276,43 @@ body {
   }
 }
   
-@media screen and (max-width: 480px) {
-  .hero-title {
-    font-size: 40px;
-  }
-}
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 360px) {
   .element {
     width: 100%;
     height: auto;
+  }
+  .hero {
+    position: relative;
+    height: 80vh;
+    display: grid;
+    overflow-y: hidden;
+  }
+  
+  .hero-title {
+    margin-inline: auto;
+    margin-top: 20vh;
+    z-index: 0;
+    font-family: 'Lobster', cursive;
+    color: #ffffff;
+    font-size: 40px;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    height: 80vh;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .bg-png {
+    position: absolute;
+    height: 80vh;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .bg-png {
+    z-index: 1;
   }
 }
 
@@ -244,43 +359,13 @@ body {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 360px) {
   .element {
       width: 100%;
       height: auto;
   }
 }
 
-.content {
-  margin: 0 ;
-  background-color: rgb(3, 22, 54);
-}
-
-.row {
-  display: flex;
-}
-
-.row>div {
-  flex: 1 0 50%;
-}
-
-.content--img {
-  max-width: 100%;
-  height: auto;
-}
-
-.text1 {
-  border: 3px solid rgb(255, 184, 184);
-  border-bottom: 5px dotted rgb(184, 123, 133);
-  border-radius: 40px ;
-  background: rgb(255, 231, 231);
-  /* 導圓角 順序順時針排列*/
-  box-sizing: border-box;
-  /* 框的尺寸連框線都有計算在內*/
-  padding: 40px;
-  /*內距，和邊框之間的距離*/
-   margin: 40px;
-}
 
 /* 切版 */
 .banner {
@@ -354,6 +439,50 @@ body {
     font-size: 18px;
   }
 }
+@media (max-width: 360px) {
+  .banner {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgb(36, 117, 111), rgb(2, 29, 68)) 
+  }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+  }
+  .banner-txt {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
+    color: #fff;
+  }
+  .banner-txt h1 {
+    font-size: 30px;
+    border-bottom: 1px solid #ffffff;
+    font-weight: 700;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.3em;
+  }
+  .banner-txt h1 small{
+    display: block;
+    font-size: 40px;
+    font-weight: 900;
+  }
+  .banner-txt h2 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .banner-txt p {
+    font-size: 20px;
+    font-weight: 200;
+  }
+}
+
 
 /* 種類介紹 */
 .wrap {
@@ -502,6 +631,70 @@ body {
   }
 }
 
+@media (max-width : 360px) {
+  .wrap {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgb(2, 29, 68),rgb(135, 168, 211));
+  }
+  .item .txt::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    border-top: 10px solid transparent;
+    border-left: 45px solid rgb(255, 255, 255);
+    border-right: 45px solid rgb(255, 255, 255);
+    transform: translateY(-100%);
+  }
+  .item:hover {
+    transform: translateY(-10%);
+  }
+  .item:hover .txt::before {
+    border-left: 45px solid #feb85d;
+    border-right: 45px solid #feb85d;
+  }
+  .item {
+    width: 90px;
+    margin: 5px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transform: translateY(0px);
+    transition: 0.25s;
+  }
+  .item img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  .item h2 {
+    border-bottom: 1px solid #888;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.4em;
+    font-weight: 900;
+    transition: 0.25s;
+    font-family: 'Lobster', cursive;
+    font-size: 12px;
+  }
+  .item p {
+    line-height: 1.6;
+    font-weight: 300;
+    transition: 0.25s;
+    font-size: 8px;
+    text-align: justify;
+  }
+  .item .txt {
+    padding: 20px;
+    position: relative;
+  }
+}
+
 /* footer */
 .main-footer {
   padding: 40px 0 0 0;
@@ -578,4 +771,87 @@ body {
   padding: 10px 0px;
   background-color: rgb(36, 117, 111);;
   color: 70f6df;
+}
+
+@media (max-width : 360px) {
+  .main-footer {
+    padding: 20px 0 0 0;
+    background: linear-gradient(180deg, #022639,#008688);
+  }
+  
+  .main-footer .footer-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .footer-item {
+    width: 0;
+    flex-grow: 1;
+    margin: 0 20px;
+  }
+  
+  .footer-item h4 {
+    font-size: 12px;
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: 'Lobster', cursive;
+  }
+  
+  .footer-item nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-item nav a {
+    color: #fff;
+    line-height: 1.4;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 10px;
+  }
+  
+  .footer-item nav a:hover {
+    color: #fa0;
+  }
+  
+  .footer-subs {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-subs form {
+    display: flex;
+    width: 100%;
+    margin: auto 0px;
+  }
+  
+  .footer-subs input[type="text"]
+  .footer-subs input[type="submit"] {
+    border: none;
+    padding: 5px 10px;
+  }
+  
+  .footer-subs input[type="text"] {
+    width: 0;
+    flex-grow: 1;
+  }
+  
+  .footer-subs input[type="submit"] {
+    color: #fff;
+    background-color: #feb85d;
+  }
+  
+  .conpyright {
+    width: 100%;
+    text-align: center;
+    margin: 150px 0 0 ;
+    padding: 10px 0px;
+    background-color: rgb(36, 117, 111);;
+    color: 70f6df;
+    font-size: 12px;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
+  }
 }
