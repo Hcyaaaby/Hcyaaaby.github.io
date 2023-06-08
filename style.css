@@ -15,14 +15,14 @@ body {
 
 .DeeperCamp {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 40px;
-    letter-spacing: 5px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    letter-spacing: 1px;
+    font-family: 'Lobster', cursive;
     font-weight: bold;
 }
 
 .DeeperCamp > span {
-    animation: DeeperCamp 5s steps(1) infinite;
+    animation: DeeperCamp 3s steps(1) infinite;
 }
 
 @keyframes DeeperCamp {
@@ -47,8 +47,8 @@ body {
     position: relative;
     transition: 0.5s;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
     color: rgb(79, 79, 79);
 }
 
@@ -61,7 +61,6 @@ body {
     position: absolute;
     inset: 10;
     border-radius: 1rem;
-    
     transition: 1s;
     box-shadow: 0 0 30px 15px #fef7e5;
     opacity: 0;
@@ -79,7 +78,7 @@ body {
 
 @media screen and (max-width: 480px) {
     .btn {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     #bg-img {
@@ -89,7 +88,7 @@ body {
 
 @media screen and (min-width: 481px) {
     .btn {
-        font-size: 12px;
+        font-size: 18px;
     }
 
     #bg-img {

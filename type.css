@@ -2,6 +2,7 @@ body {
     margin: 0;
 }
 
+/* 多層選單 */
 /* 在小型螢幕上點擊主選單後顯示子選單 */
 @media screen and (max-width: 768px) {
   .menu-item:hover .sub-menu {
@@ -16,7 +17,7 @@ body {
   }
 }
 
-/* 最上面選單的部分開始 */
+/* 浮動選單的部分開始 */
 .logo--img {
     width: 250px;
 }
@@ -29,12 +30,19 @@ body {
     display: flex;
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .nav-computer {
     display: flex;
     flex-basis: calc(100% * (1 / 2));
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
+    text-decoration: none;
 }
 
 .nav-logo {
@@ -46,7 +54,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #fff;
 }
 
 .nav-section:not(.nav-logo) {
@@ -55,6 +64,9 @@ body {
 
 .nav-social , .nav-contact , .nav-link {
     flex: 1;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
+
 }
 
 .nav-logo {
@@ -70,6 +82,9 @@ body {
 .nav-contact {
     text-align: center;
     transition: 0.4s ease-in-out;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
+    color: #fff;
 }
 
 .nav-contact:hover {
@@ -95,6 +110,7 @@ body {
     padding: 1rem 2rem;
     font-size: 1.5rem;
     transition: 0.3s;
+    color: #fff;
 }
 
 .nav-toggle:hover {
@@ -121,103 +137,445 @@ body {
     }
   }
 
-  @media (min-width: 768px) {
-    /* 768px或更大的螢幕上 */
-    .nav-computer {
-      display: flex;
-    }
-    .nav-toggle {
-      display: none;
-    }
+@media (min-width: 768px) {
+  /* 768px或更大的螢幕上 */
+  .nav-computer {
+    display: flex;
   }
-
-  /* 滾動視差1 */
-  .hero {
-    position: relative;
-    height: 120vh;
-    display: grid;
-    overflow-y: hidden;
+  .nav-toggle {
+    display: none;
   }
+}
 
+/* 滾動視差1 */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  overflow-y: hidden;
+}
+
+.hero-title {
+  margin-inline: auto;
+  margin-top: 25vh;
+  z-index: 0;
+  font-family: 'Lobster', cursive;
+  color: #ffffff;
+  font-size: 100px;
+}
+
+.hero-bg {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.bg-png {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.bg-png {
+  z-index: 1;
+}
+  
+@media screen and (max-width: 768px) {
   .hero-title {
-    margin-inline: auto;
-    margin-top: 30vh;
-    z-index: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #ffffff;
-    font-size: 100px;
+    font-size: 60px;
   }
-
-  .hero-bg {
-    position: absolute;
-    height: 120vh;
-    width: 100%;
-    z-index: -1;
-  }
-
-  .bg-png {
-    position: absolute;
-    height: 120vh;
-    width: 100%;
-    z-index: -1;
-  }
-
-  .bg-png {
-    z-index: 1;
-  }
+}
   
-  @media screen and (max-width: 768px) {
-    .hero-title {
-      font-size: 60px;
-    }
-    
+@media screen and (max-width: 480px) {
+  .hero-title {
+    font-size: 40px;
   }
-  
-  @media screen and (max-width: 480px) {
-    .hero-title {
-      font-size: 40px;
-    }
-  }
+}
 
-  /* 滾動視差2 */
-  .camp_bg {
+@media screen and (max-width: 480px) {
+  .element {
     width: 100%;
-    height: 100vh;
-    display: grid;
-    place-content: center;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    height: auto;
+  }
+}
+
+/* 滾動視差2 */
+.camp_bg {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .title {
-    color: #fff;
-    font-size: 9rem;
-    mix-blend-mode: difference;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #fff;
+  font-size: 9rem;
+  mix-blend-mode: difference;
+  font-family: 'Lobster', cursive;
 }
 .bg1 {
-    background-image: url(01.jpg);
+  background-image: url(01.jpg);
 }
 
 .bg2 {
-    background-image: url(03.jpg);
+  background-image: url(03.jpg);
 }
 
 .bg3 {
-    background-image: url(02.jpg);
+  background-image: url(02.jpg);
 }
 
 @media screen and (max-width: 767px) {
-    /* 手機 */
-    .title {
-      font-size: 4rem;
-    }
+  /* 手機 */
+  .title {
+    font-size: 4rem;
   }
+}
   
 @media screen and (min-width: 768px) {
-    /* 電腦 */
-    .title {
-      font-size: 9rem;
-    }
-    }    
+  /* 電腦 */
+  .title {
+    font-size: 9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .element {
+      width: 100%;
+      height: auto;
+  }
+}
+
+.content {
+  margin: 0 ;
+  background-color: rgb(3, 22, 54);
+}
+
+.row {
+  display: flex;
+}
+
+.row>div {
+  flex: 1 0 50%;
+}
+
+.content--img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text1 {
+  border: 3px solid rgb(255, 184, 184);
+  border-bottom: 5px dotted rgb(184, 123, 133);
+  border-radius: 40px ;
+  background: rgb(255, 231, 231);
+  /* 導圓角 順序順時針排列*/
+  box-sizing: border-box;
+  /* 框的尺寸連框線都有計算在內*/
+  padding: 40px;
+  /*內距，和邊框之間的距離*/
+   margin: 40px;
+}
+
+/* 切版 */
+.banner {
+  width: 100%;
+  height: 650px;
+  background: linear-gradient(110deg, rgb(2, 29, 68) 50%, 
+              transparent 50%) center center / 100% 100%,
+              url(13.jpeg) right center / auto 100%;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+}
+.banner-txt {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Lobster', cursive;
+  font-family: 'Playfair', serif;
+  color: #fff;
+}
+.banner-txt h1 {
+  font-size: 30px;
+  border-bottom: 1px solid #ffffff;
+  font-weight: 700;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.3em;
+}
+.banner-txt h1 small{
+  display: block;
+  font-size: 40px;
+  font-weight: 900;
+}
+.banner-txt h2 {
+  font-size: 20px;
+  font-weight: 300;
+}
+.banner-txt p {
+  font-size: 20px;
+  font-weight: 200;
+}
+@media (max-width: 767px) {
+  /* 在螢幕寬度小於768px時應用的樣式 */
+  .banner {
+    height: 400px;
+    background-size: cover;
+  }
+  .banner-txt {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Lobster', cursive;
+    font-family: 'Playfair', serif;
+    color: #fff;
+  }
+  .banner-txt h1 {
+    font-size: 24px;
+  }
+
+  .banner-txt h1 small {
+    font-size: 28px;
+  }
+
+  .banner-txt h2 {
+    font-size: 18px;
+  }
+}
+
+/* 種類介紹 */
+.wrap {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(2, 29, 68);
+}
+
+.item {
+  width: 370px;
+  margin: 15px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  transform: translateY(0px);
+  transition: 0.25s;
+}
+
+.item img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.item h2 {
+  border-bottom: 1px solid #888;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.4em;
+  font-weight: 900;
+  transition: 0.25s;
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+}
+
+.item p {
+  line-height: 1.6;
+  font-weight: 300;
+  transition: 0.25s;
+  text-align: justify;
+}
+
+.item .txt {
+  padding: 20px;
+  position: relative;
+}
+
+.item .txt::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  border-top: 50px solid transparent;
+  border-left: 185px solid rgb(255, 255, 255);
+  border-right: 185px solid rgb(255, 255, 255);
+  transform: translateY(-100%);
+}
+
+.item:hover {
+  transform: translateY(-10%);
+}
+
+.item:hover .txt {
+  background-image: linear-gradient(0deg, #feb876, #feb85d);
+}
+
+.item:hover .txt::before {
+  border-left: 184px solid #feb85d;
+  border-right: 184px solid #feb85d;
+}
+
+.item:hover h2 {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+.item:hover p {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .wrap {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(2, 29, 68);
+  }
+  .item .txt::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    border-top: 25px solid transparent;
+    border-left: 90px solid rgb(255, 255, 255);
+    border-right: 90px solid rgb(255, 255, 255);
+    transform: translateY(-100%);
+  }
+  .item:hover {
+    transform: translateY(-10%);
+  }
+  .item:hover .txt::before {
+    border-left: 90px solid #feb85d;
+    border-right: 90px solid #feb85d;
+  }
+  .item {
+    width: 185px;
+    margin: 5px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transform: translateY(0px);
+    transition: 0.25s;
+  }
+  .item img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  .item h2 {
+    border-bottom: 1px solid #888;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.4em;
+    font-weight: 900;
+    transition: 0.25s;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+  }
+  .item p {
+    line-height: 1.6;
+    font-weight: 300;
+    transition: 0.25s;
+    font-size: 12px;
+    text-align: justify;
+  }
+  .item .txt {
+    padding: 20px;
+    position: relative;
+  }
+}
+
+/* footer */
+.main-footer {
+  padding: 40px 0 0 0;
+  background: linear-gradient(180deg, #022639,#008688);
+}
+
+.main-footer .footer-container {
+  display: flex;
+  width: 100%;
+}
+
+.footer-item {
+  width: 0;
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.footer-item h4 {
+  font-size: 24px;
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  font-family: 'Lobster', cursive;
+}
+
+.footer-item nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-item nav a {
+  color: #fff;
+  line-height: 1.4;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.footer-item nav a:hover {
+  color: #fa0;
+}
+
+.footer-subs {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-subs form {
+  display: flex;
+  width: 100%;
+  margin: auto 0px;
+}
+
+.footer-subs input[type="text"]
+.footer-subs input[type="submit"] {
+  border: none;
+  padding: 5px 10px;
+}
+
+.footer-subs input[type="text"] {
+  width: 0;
+  flex-grow: 1;
+}
+
+.footer-subs input[type="submit"] {
+  color: #fff;
+  background-color: #feb85d;
+}
+
+.conpyright {
+  width: 100%;
+  text-align: center;
+  margin: 150px 0 0 ;
+  padding: 10px 0px;
+  background-color: rgb(36, 117, 111);;
+  color: 70f6df;
+}

@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Deeper camp</title>
     <link rel="stylesheet" href="type.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="type.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8adb995290.js" crossorigin="anonymous"></script>
     <style>
@@ -17,14 +25,17 @@
         }
         .main-nav {
             background-color: rgb(36, 117, 111);
+            padding: 10px 30px;
+            position: relative;
         }
         .main-nav a {
             color: rgb(255, 255, 255);
             display: block;
             padding: 10px 30px;
             text-decoration: none;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 15px;
+            font-family: 'Lobster', cursive;
+            font-family: 'Playfair', serif;
+            font-size: 18px;
         }
         .main-nav > ul {
             display: flex;
@@ -40,9 +51,17 @@
             display: none;
             position: absolute;
             top: 100%;
-            left: 0;
-            background-color: rgb(149, 201, 196);
+            left: 0%;
+            background-color: rgb(36, 117, 111);
             /* display: flex; */
+            z-index: 2;
+        }
+        .sub-menu ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: rgb(36, 117, 111);
             z-index: 2;
         }
         .menu-item:hover .sub-menu,.sub-menu-item:hover > ul {
@@ -50,27 +69,37 @@
         }
         .menu-item:hover .sub-menu {
             display: block;
+            width: 100%; /* 新增這行以填滿父選單的寬度 */
+            position: absolute;
+            top: 100%; /* 將子選單置於選單列的正下方 */
+            left: 0;
         }
         .sub-menu-item {
             position: relative; /* 將位置設為相對定位 */ /* 調整層級，使其位於其他元素之上 */
         }
         .sub-menu-item > a {
-            color: rgb(19, 86, 80);
+            color: rgb(87, 184, 178);
         }
-        .sub-menu ul {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: rgb(149, 201, 196);
-            z-index: 2;
-        }
-
         .sub-menu ul li {
             position: relative;
         }
         .sub-menu ul li:hover > ul {
             display: block
+        }
+        .sub-menu-item:hover > a {
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .main-nav {
+                background-color: rgb(36, 117, 111);
+                padding: 10px 30px;
+                position: relative;
+            }
+            .menu-item .camper-van > ul {
+                left: -100%; /* 將選單置於父選單的左側 */
+                top: 0;
+                width: 100vw;
+            }
         }
     </style>
 </head>
@@ -85,8 +114,8 @@
         </label>
         <div class="nav-computer">
             <div class="nav-link nav-section">
-                <a href="#">About</a>
-                <a href="#">Work</a>
+                <a href="#">TYPES</a>
+                <a href="#">About Us</a>
             </div>
             <div class="nav-social nav-section">
                 <a href="#">
@@ -105,10 +134,18 @@
         </div>
 
         <button class="nav-toggle">
-            <i class="fa-solid fa-bars"></i>
+            <a href="#" class="btn-menu">
+                <i class="fa-solid fa-bars"></i>
+            </a>
         </button>
     </nav>
 
+    <div class="hero">
+        <img src="16.jpg" class="hero-bg" alt="">
+        <img src="16-1.png" class="bg-png" alt="">
+        <h1 class="hero-title">Friendly Nature</h1>
+    </div>
+    
     <nav class="main-nav">
         <ul>
             <li class="menu-item">
@@ -118,7 +155,7 @@
                         <a href="">North Region</a>
                         <ul>
                             <li>
-                                <a href="">Taipei</a>
+                                <a href="" class="">Taipei</a>
                             </li>
                             <li>
                                 <a href="">Singbei</a>
@@ -242,7 +279,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item camper-van">
                 <a href="">Camper Van Area</a>
                 <ul class="sub-menu">
                     <li class="sub-menu-item">
@@ -291,29 +328,52 @@
         </ul>
     </nav>
 
-    <div class="hero">
-        <img src="20.png" class="hero-bg" alt="">
-        <img src="20-1.png" class="bg-png" alt="">
-        <h1 class="hero-title">Friendly Nature</h1>
-    </div>
-
-    <div class="content">
-        <div class="row">
-            <div class="photo1">
-                <img src="p1.jpg" class="content--img" alt="">
-            </div>
-            <div class="text1">
-                <h2>HI! Here is Deeeeeeper Camp</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores est obcaecati quos harum dignissimos assumenda accusantium, maxime fuga, officia, totam deserunt. Praesentium at asperiores repellat! Ad iure veniam ab nemo.</p>
+    <div class="banner">
+        <div class="container">
+            <div class="banner-txt">
+                <h1>
+                    H! Dear, Here is 
+                    <small>
+                        Deeper Camp.com <br>
+                    </small>
+                </h1>
+                <h2>
+                    <br>Let's get close to nature together!
+                    <br>Are You Ready?
+                    <br><br>Let Weeeee GO!</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="text2">
-                <h3>Get Close to Nature With Us! </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur provident quaerat explicabo officiis eveniet quidem mollitia autem. Consequuntur provident nam quaerat commodi est temporibus voluptates! Non nam iure praesentium! Accusamus!</p>
+    </div>
+
+    <div class="wrap">
+        <div class="item">
+            <img src="19.jpeg" alt="">
+            <div class="txt">
+                <h2>Camping</h2>
+                <p>常規露營是最常見的露營類型，也是大多數人既定印象中的露營。
+                    大多選擇在有業主管理規劃的營區，以享受動手搭帳篷的樂趣，
+                    且不需要克服無水無電的障礙，也能在忙碌一天後沖澡淨身，安全上較有保障。
+                    通常可以直接開車到營區，省去背著露營裝備跋山涉水的煩惱。</p>
             </div>
-            <div class="photo2">
-                <img src="p2.jpg" class="content--img" alt="">
+        </div>
+        <div class="item">
+            <img src="08.jpg" alt="">
+            <div class="txt">
+                <h2>Glamping</h2>
+                <p>豪華露營英文又稱“Glamping"，由[Glamorous]和[Camping]兩個詞彙組合而成。
+                    豪華露營如 Glamping 所示，有著漂亮迷人的神殿帳、小木屋，舒適度不下於高級飯店。
+                    並且備有精緻晚餐、營火活動、BBQ 等附加服務。豪華露營擁有獨特的高級感，
+                    也吸引不少民眾體驗。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="17.jpeg" alt="">
+            <div class="txt">
+                <h2>Camper Van</h2>
+                <p>想體驗說走就走的露營，露營車也是不錯的選擇！可以自己駕駛露營車，
+                    到處旅遊，想停就停，露營車比起帳篷更寬敞舒適。
+                    在露營車內擁有舒適的空間，配備充足，甚至有浴室、彈簧床、電視、冰箱等，
+                    較年長者或露營新手，可以考慮露營車營區。</p>
             </div>
         </div>
     </div>
@@ -332,6 +392,42 @@
             <h1 class="title">Camper Van</h1>
         </div>
     </section>
+
+    <div class="main-footer">
+        <div class="footer-container">
+            <div class="footer-item">
+                <h4>More</h4>
+                <nav>
+                    <a href="#"><i class="fa-sharp fa-regular fa-angles-right"></i>露營必備</a>
+                    <a href="#"><i class="fa-sharp fa-regular fa-angles-right"></i>心得分享</a>
+                    <a href="#"><i class="fa-sharp fa-regular fa-angles-right"></i>天氣預報</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>News+</h4>
+                <nav>
+                    <a href="#"><i class="fa-sharp fa-regular fa-angles-right"></i>News</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>About Us</h4>
+                <nav>
+                    <a href="#"><i class="fa-sharp fa-regular fa-angles-right"></i>Email</a>
+                    <a href="#"><i class="fa-sharp fa-regular fa-angles-right"></i>Address</a>
+                </nav>
+            </div>
+            <div class="footer-item footer-subs">
+                <h4>Subscribe</h4>
+                <nav>
+                    <a href="#"><i class="fa-sharp fa-regular fa-angles-right"></i>訂閱我</a>
+                </nav>
+            </div>
+        </div>
+        <div class="conpyright">
+            Copyright &copy; Deeeeeeeeper Camp.com
+
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="type.js"></script>
